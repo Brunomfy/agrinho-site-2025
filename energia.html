@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <style>
+        .cabecalho {
+            background-color: brown;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .navbar-custom {
+            background-color: #f5deb3; /* cor bege clara */
+        }
+        .navbar-custom .nav-link {
+            color: #4b2e2e;
+            font-weight: bold;
+        }
+        .navbar-custom .nav-link:hover {
+            color: brown;
+        }
+        footer {
+            background-color: #f5deb3;
+            text-align: center;
+            padding: 15px 0;
+            color: #4b2e2e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cabecalho">
+        <h1>Agrinho 2025</h1>
+        <h2>Festejando conexão Campo Cidade</h2>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">🌱 Início Verde</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="energia.html">⚡ Força Sustentável</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="agua.html">💧 Riqueza Azul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producao.html">🌾 Sabores da Terra</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <audio id="musica" autoplay loop playsinline>
+  <source src="Strings of Fire (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 0.2; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 0.5;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+  <audio id="somClick" src="bruno-som.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+    <div class="container my-5">
+  <h1 style="color:brown; text-align:center;">Energia no Meio Rural e Urbano</h1>
+  <table class="table table-striped table-bordered" style="background-color: #f9f9f9;">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Aspecto</th>
+        <th scope="col">Meio Rural</th>
+        <th scope="col">Meio Urbano</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Fontes de Energia Comuns</th>
+        <td>
+          Energia solar (painéis fotovoltaicos), biomassa, pequenas centrais hidrelétricas, energia eólica, geradores a diesel.
+        </td>
+        <td>
+          Energia elétrica da rede pública, gás natural, energia solar (em menor escala residencial), energia eólica em parques industriais.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Acesso à Energia</th>
+        <td>
+          Ainda apresenta desafios em áreas remotas, com acesso limitado e maior dependência de soluções off-grid.
+        </td>
+        <td>
+          Geralmente possui acesso estável e contínuo à rede elétrica pública, com menor risco de interrupções.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Consumo Médio</th>
+        <td>
+          Consumo menor por residência, mas aumento crescente devido à modernização e uso de equipamentos agrícolas.
+        </td>
+        <td>
+          Consumo elevado e diversificado, envolvendo iluminação, eletrônicos, transporte elétrico, indústrias e comércio.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Sustentabilidade</th>
+        <td>
+          Crescente uso de energias renováveis, como solar e biomassa, promovendo menor impacto ambiental e autonomia energética.
+        </td>
+        <td>
+          Uso crescente de fontes renováveis, mas ainda forte dependência de energia convencional e combustíveis fósseis.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Desafios</th>
+        <td>
+          Infraestrutura limitada, altos custos de implementação de redes e tecnologias, necessidade de capacitação técnica.
+        </td>
+        <td>
+          Gestão do consumo crescente, modernização das redes, redução das emissões e adaptação às mudanças climáticas.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Inovações Recentes</th>
+        <td>
+          Uso de microgeração distribuída, sistemas híbridos (solar + biomassa), baterias para armazenamento de energia.
+        </td>
+        <td>
+          Redes inteligentes (smart grids), veículos elétricos, armazenamento em larga escala, eficiência energética em edifícios.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<main class="container mt-5">
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="./assets/image/tomada.png.jpeg" class="img-fluid rounded" alt="Energia no Meio Rural e Urbano">
+    </div>
+    <div class="col-md-8">
+      <h2>Energia no Meio Rural e Urbano</h2>
+      <p>
+        A energia no meio rural apresenta características distintas do ambiente urbano. Enquanto as áreas urbanas geralmente contam com acesso contínuo e estável à rede elétrica pública, o meio rural ainda enfrenta desafios relacionados à infraestrutura, com muitas regiões dependendo de soluções alternativas como energia solar, biomassa e pequenas centrais hidrelétricas.
+      </p>
+
+      <p>
+        No meio urbano, o consumo energético é elevado e diversificado, abrangendo residências, comércio, indústrias e transporte, exigindo redes inteligentes e sistemas de gestão para otimizar o uso e reduzir desperdícios. Já no campo, o consumo é menor por residência, mas está crescendo devido à modernização das atividades agrícolas e ao uso de equipamentos tecnológicos que demandam eletricidade.
+      </p>
+
+      <p>
+        A sustentabilidade é uma prioridade crescente em ambos os ambientes. No campo, o uso de energias renováveis como solar e biomassa contribui para a autonomia energética e menor impacto ambiental, enquanto nas cidades, há avanços na implementação de veículos elétricos, eficiência energética em edificações e o desenvolvimento de fontes renováveis integradas à matriz urbana.
+      </p>
+    </div>
+  </div>
+</main>
+
+<div class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Energia Solar no Campo</h5>
+          <p class="card-text">
+            A energia solar tem se tornado uma solução fundamental para o meio rural, especialmente em regiões remotas onde a rede elétrica pública é limitada. Painéis solares ajudam agricultores a reduzir custos e promover a sustentabilidade, além de garantir autonomia energética.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Eficiência Energética Urbana</h5>
+          <p class="card-text">
+            Nas cidades, o foco está em reduzir o consumo de energia por meio de tecnologias inteligentes, como iluminação LED, edifícios sustentáveis e sistemas de gestão de energia que otimizam o uso e diminuem o impacto ambiental.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Inovações em Energia Renovável</h5>
+          <p class="card-text">
+            Tanto no meio rural quanto urbano, as energias renováveis avançam com inovações como baterias para armazenamento, redes inteligentes (smart grids) e uso combinado de fontes para garantir energia limpa e estável.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6 d-flex justify-content-center">
+      <img src="./assets/image/lampada.png.jpeg" alt="Descrição da imagem 1" class="img-fluid rounded">
+    </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <img src="./assets/image/pc.png.jpeg" alt="Descrição da imagem 2" class="img-fluid rounded">
+    </div>
+  </div>
+</div>
+<div class="container my-4">
+  <h1 style="color:brown;">A Importância da Energia Sustentável no Campo e na Cidade</h1>
+  <p style="font-size:1.1rem; line-height:1.6; text-align: justify;">
+    A energia é um elemento fundamental para o desenvolvimento tanto do meio rural quanto do urbano. No campo, o acesso à energia permite modernizar práticas agrícolas, aumentar a produtividade e melhorar a qualidade de vida das comunidades, por meio do uso de equipamentos elétricos, sistemas de irrigação automatizados e iluminação adequada. Já nas cidades, a energia é vital para a operação de indústrias, transporte, comércio e residências, influenciando diretamente a economia e o bem-estar da população.
+  </p>
+
+  <p style="font-size:1.1rem; line-height:1.6; text-align: justify;">
+    A busca por fontes de energia sustentáveis é crucial para reduzir os impactos ambientais causados pelos combustíveis fósseis e promover a conservação dos recursos naturais. No meio rural, tecnologias como painéis solares, biomassa e pequenas centrais hidrelétricas estão cada vez mais presentes, garantindo autonomia energética e menor emissão de gases poluentes. Nas áreas urbanas, a adoção de sistemas inteligentes de gestão de energia, veículos elétricos e edificações sustentáveis refletem a preocupação com a eficiência e a sustentabilidade.
+  </p>
+
+  <p style="font-size:1.1rem; line-height:1.6; text-align: justify;">
+    O desafio principal no meio rural ainda é a infraestrutura limitada, o que torna indispensável a utilização de soluções off-grid, que não dependem da rede pública. Isso gera oportunidades para inovação, como o uso de baterias para armazenamento de energia e sistemas híbridos que combinam diferentes fontes renováveis, tornando a energia mais confiável e acessível para agricultores e moradores do campo.
+  </p>
+
+  <p style="font-size:1.1rem; line-height:1.6; text-align: justify;">
+    No ambiente urbano, o crescimento da população e a expansão das áreas metropolitanas exigem investimentos contínuos em redes elétricas inteligentes e em energias renováveis para atender à demanda crescente sem comprometer o meio ambiente. Políticas públicas e incentivos são essenciais para fomentar a adoção de práticas sustentáveis, desde a construção civil até o transporte coletivo e residencial.
+  </p>
+
+  <p style="font-size:1.1rem; line-height:1.6; text-align: justify;">
+    Por fim, a integração das tecnologias energéticas entre campo e cidade pode promover um desenvolvimento mais equilibrado, no qual o meio rural contribua para a geração de energia limpa, enquanto as cidades adotem práticas de consumo consciente e eficiente. Esse equilíbrio é fundamental para garantir a sustentabilidade ambiental, econômica e social no futuro.
+  </p>
+</div>
+
+<div class="container my-4">
+  <h1 style="color: brown;">Referência</h1>
+  <p>
+    <a href="https://www.aneel.gov.br/educacao-ambiental/energia-e-meio-ambiente" target="_blank" style="color: purple;">
+      Energia e Meio Ambiente - Agência Nacional de Energia Elétrica (ANEEL)
+    </a>
+  </p>
+</div>
+
+
+    <footer>
+        Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.
+    </footer>
+
+</body>
+</html>

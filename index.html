@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <style>
+        .cabecalho {
+            background-color: brown;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .navbar-custom {
+            background-color: #f5deb3; /* cor bege clara */
+        }
+        .navbar-custom .nav-link {
+            color: #4b2e2e;
+            font-weight: bold;
+        }
+        .navbar-custom .nav-link:hover {
+            color: brown;
+        }
+        footer {
+            background-color: #f5deb3;
+            text-align: center;
+            padding: 15px 0;
+            color: #4b2e2e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cabecalho">
+        <h1>Agrinho 2025</h1>
+        <h2>Festejando conexão Campo Cidade</h2>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">🌱 Início Verde</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="energia.html">⚡ Força Sustentável</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="agua.html">💧 Riqueza Azul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producao.html">🌾 Sabores da Terra</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <audio id="musica" autoplay loop playsinline>
+  <source src="Strings of Fire (1).mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
+
+<script>
+  const audio = document.getElementById('musica');
+  audio.volume = 0.2; // volume máximo
+</script>
+
+
+<script>
+  const musica = document.getElementById('musica');
+  
+  // Força a tocar o áudio (mesmo que bloqueie, tenta)
+  musica.volume = 0.5;
+  musica.play().catch(e => {
+    console.log('Autoplay bloqueado, sem som até interação.');
+  });
+</script>
+
+
+
+  <audio id="somClick" src="bruno-som.mp3" preload="auto"></audio>
+
+  <script>
+    const som = document.getElementById("somClick");
+
+    document.addEventListener("click", () => {
+      som.pause();
+      som.currentTime = 0;
+      som.playbackRate = 2; // <-- aqui aumenta a velocidade
+      som.play().catch((e) => {
+        console.log("Erro ao tocar o som:", e);
+      });
+    });
+  </script>
+
+<main class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <img src="./assets/image/boi.png.jpeg" class="img-fluid rounded" alt="Produção Rural">
+        </div>
+        <div class="col-md-8">
+            <h2>Vida no Campo</h2>
+            <p>A vida no campo representa a essência da conexão entre natureza e cultura. As áreas rurais são espaços onde a agricultura sustentável e o respeito ao meio ambiente caminham juntos para garantir um futuro melhor para as próximas gerações.</p>
+
+            <p>Comunidades rurais valorizam suas tradições e promovem um estilo de vida que respeita o ritmo natural, incentivando práticas agrícolas responsáveis e a preservação dos recursos naturais essenciais, como a água e o solo fértil.</p>
+
+            <p>Além da produção agrícola, a zona rural abre portas para o turismo sustentável, onde visitantes têm a oportunidade de vivenciar a cultura local, participar de eventos tradicionais e conhecer tecnologias inovadoras que transformam o campo em um espaço de inovação e sustentabilidade.</p>
+        </div>
+    </div>
+</main>
+
+
+<!-- Container para o gráfico -->
+<div class="container mt-5 mb-5">
+  <h3 class="text-center mb-4">Evolução da Vida no Campo (1950-2025)</h3>
+  <canvas id="vidaCampoChart"></canvas>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('vidaCampoChart').getContext('2d');
+
+  const vidaCampoChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [
+        '1950', '1960', '1970', '1980', '1990', 
+        '2000', '2010', '2020', '2025'
+      ],
+      datasets: [{
+        label: 'Índice de Vida no Campo',
+        data: [20, 35, 30, 50, 45, 60, 55, 75, 80], // Dados fictícios para linha ondulada
+        fill: false,
+        borderColor: 'brown',
+        backgroundColor: 'brown',
+        tension: 0.4,  // Deixa a linha com curvas suaves (ondulada)
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        borderWidth: 3,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          ticks: {
+            stepSize: 10
+          },
+          title: {
+            display: true,
+            text: 'Índice (%)',
+            color: '#4b2e2e',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Ano',
+            color: '#4b2e2e',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: '#4b2e2e',
+            font: {
+              size: 14,
+              weight: 'bold'
+            }
+          }
+        },
+        tooltip: {
+          enabled: true,
+          backgroundColor: 'brown',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          cornerRadius: 5
+        }
+      }
+    }
+  });
+</script>
+
+<div class="container my-5">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h4 class="card-title mb-3" style="color:brown;">Vida na roça atrai quem não tem raízes na zona rural</h4>
+      <p class="card-text">
+        A vida no campo conquista cada vez mais pessoas que estavam ambientadas na cidade, profissionais que mudaram radicalmente de estilo de vida.<br><br>
+        Atualmente, a fazenda é dedicada para a criação de gado nelore e angus. O local é mantido por Maria Lúcia e alguns funcionários. Um desses colaboradores é André Luiz Fernandes, de 24 anos, filho de funcionários que nasceram e cresceram na fazenda.<br><br>
+        André, que atualmente cursa Agronomia, aprende e troca conhecimentos com Maria Lúcia. "A gente troca muita ideia, aprende junto, é bom para os dois lados", comenta André.<br><br>
+        Para Maria Lúcia, a vida no campo é muito mais do que trabalho, é um estilo de vida. Ela conta que, antes de se mudar, fez planos juntos com o marido, e buscou trazer um pouco da comodidade da cidade, com uma casa ampla e com conexão com a internet. "Não me vejo em outro lugar, nem gosto mais da cidade; minha vida é no campo", afirma.<br><br>
+        Ela não é a única, esse movimento de migração da cidade para o campo. Outro exemplo é Paulo Mazo que, depois de 30 anos dedicados à indústria automobilística, resolveu morar no campo, cultivar maracujás e criar animais. "Estou em paz com minha escolha, as pessoas devem fazer o que gostam", concluiu.
+      </p>
+      <a href="https://g1.globo.com/sp/sorocaba-jundiai/nosso-campo/noticia/2024/10/27/vida-na-roca-atrai-quem-nao-tem-raizes-na-zona-rural.ghtml" 
+         target="_blank" 
+         class="btn btn-outline-brown" 
+         style="border-color:brown; color:brown;">
+        Leia a notícia completa no G1
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .btn-outline-brown:hover {
+    background-color: brown;
+    color: white;
+    border-color: brown;
+  }
+</style>
+
+
+<div class="container my-5">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Card 1 - Agricultura Sustentável -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalAgri">
+        <img src="assets/image/boi.png.jpeg">
+        <div class="card-body">
+          <h5 class="card-title">Agricultura Sustentável</h5>
+          <p class="card-text">Práticas agrícolas que respeitam o meio ambiente, conservam recursos naturais e promovem a biodiversidade para garantir alimentos de qualidade e um futuro equilibrado.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 - Energia Renovável no Campo -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalEnergia">
+        <img src="assets/image/estrada.png.jpeg" class="card-img-top" alt="Energia Renovável">
+        <div class="card-body">
+          <h5 class="card-title">Energia Renovável no Campo</h5>
+          <p class="card-text">Uso de fontes limpas como solar, eólica e biogás para levar energia sustentável às áreas rurais, reduzindo custos e impactos ambientais.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 - Turismo Rural -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalTurismo">
+        <img src="assets/image/campo.png.jpeg" class="card-img-top" alt="Turismo Rural">
+        <div class="card-body">
+          <h5 class="card-title">Turismo Rural</h5>
+          <p class="card-text">Experiências autênticas no campo que conectam visitantes à natureza, cultura local e tradições, fomentando o desenvolvimento sustentável das comunidades rurais.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modais -->
+
+<!-- Modal Agricultura Sustentável -->
+<div class="modal fade" id="modalAgri" tabindex="-1" aria-labelledby="modalAgriLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-brown text-white">
+        <h5 class="modal-title" id="modalAgriLabel">Agricultura Sustentável</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>A agricultura sustentável integra práticas que preservam o solo, a água e a biodiversidade, promovendo a saúde ambiental e a produção de alimentos seguros e nutritivos.</p>
+        <h6>Principais tópicos:</h6>
+        <ul>
+          <li>Rotação de culturas para conservação do solo</li>
+          <li>Uso controlado de defensivos naturais</li>
+          <li>Plantio direto para evitar erosão</li>
+          <li>Agricultura orgânica e agroecologia</li>
+          <li>Conservação da água e manejo eficiente</li>
+        </ul>
+        <p>Essas práticas garantem a produtividade a longo prazo, reduzem impactos negativos e melhoram a qualidade de vida dos produtores e consumidores.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-brown" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Energia Renovável -->
+<div class="modal fade" id="modalEnergia" tabindex="-1" aria-labelledby="modalEnergiaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-brown text-white">
+        <h5 class="modal-title" id="modalEnergiaLabel">Energia Renovável no Campo</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>O campo está cada vez mais conectado às fontes de energia limpa, contribuindo para a sustentabilidade ambiental e redução dos custos operacionais.</p>
+        <h6>Principais fontes de energia:</h6>
+        <ul>
+          <li>Solar: painéis fotovoltaicos para geração local</li>
+          <li>Eólica: turbinas aproveitando o vento constante</li>
+          <li>Biogás: aproveitamento de resíduos orgânicos para produção de energia</li>
+          <li>Sistemas híbridos para garantir eficiência</li>
+        </ul>
+        <p>Além de gerar energia limpa, essas tecnologias ajudam a promover a autonomia energética das propriedades rurais.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-brown" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Turismo Rural -->
+<div class="modal fade" id="modalTurismo" tabindex="-1" aria-labelledby="modalTurismoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-brown text-white">
+        <h5 class="modal-title" id="modalTurismoLabel">Turismo Rural</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>O turismo rural valoriza a cultura, as tradições e a natureza do campo, gerando renda para as comunidades locais e promovendo experiências autênticas para os visitantes.</p>
+        <h6>Aspectos importantes:</h6>
+        <ul>
+          <li>Visitas a fazendas e sítios com atividades agrícolas</li>
+          <li>Participação em festas e festivais tradicionais</li>
+          <li>Contato direto com a natureza e vida ao ar livre</li>
+          <li>Gastronomia típica e produtos artesanais</li>
+          <li>Turismo sustentável e conscientização ambiental</li>
+        </ul>
+        <p>Esse tipo de turismo contribui para o desenvolvimento econômico e a preservação cultural das regiões rurais.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-brown" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .bg-brown {
+    background-color: brown !important;
+  }
+  .btn-outline-brown {
+    border-color: brown;
+    color: brown;
+  }
+  .btn-outline-brown:hover {
+    background-color: brown;
+    color: white;
+  }
+</style>
+
+<div class="container my-5">
+  <h1 class="text-center" style="color:brown;">Conservação Ambiental no Campo: Preservando o Futuro</h1>
+  <p style="text-align: justify; font-size: 1.1rem; line-height: 1.6;">
+    A conservação ambiental no campo é essencial para garantir a sustentabilidade dos recursos naturais e a qualidade de vida das gerações presentes e futuras. As áreas rurais são responsáveis por grande parte da produção alimentar do país, e o equilíbrio entre a exploração agrícola e a preservação do meio ambiente é fundamental para manter a saúde dos ecossistemas.<br><br>
+
+    A prática da conservação envolve diversas ações, como o manejo adequado do solo para evitar erosão, a proteção das nascentes e cursos d’água, a manutenção das matas ciliares e a promoção da biodiversidade local. Essas medidas previnem o desgaste dos recursos naturais e ajudam a conservar a flora e fauna típicas da região.<br><br>
+
+    Além disso, a conservação ambiental no campo contribui para o sequestro de carbono, ajudando a mitigar os efeitos das mudanças climáticas. Propriedades rurais que adotam práticas sustentáveis, como o plantio de árvores e a integração lavoura-pecuária-floresta, promovem um ciclo mais equilibrado de nutrientes e aumentam a produtividade sem causar danos ao meio ambiente.<br><br>
+
+    A conscientização e o engajamento dos agricultores e comunidades rurais são decisivos para o sucesso dessas ações. Investir em educação ambiental, tecnologia e políticas públicas voltadas para a sustentabilidade ajuda a criar um modelo de desenvolvimento que respeita o meio ambiente e promove o bem-estar social e econômico.<br><br>
+
+    Em suma, a conservação ambiental no campo é uma estratégia indispensável para a proteção dos recursos naturais, o fortalecimento da agricultura sustentável e a garantia de um futuro próspero para o campo e para toda a sociedade.
+  </p>
+</div>
+
+<div class="container my-5">
+  <div class="card shadow p-4" style="max-width: 900px; margin: auto; border-radius: 15px; background-color: #f9f9f9;">
+    
+    <div class="row mb-4 align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="assets/image/agricultor.png.jpeg" alt="Bruno Fernandes" class="img-fluid rounded" style="max-height: 250px; object-fit: cover;">
+        <small class="text-muted d-block mt-2">Bruno Fernandes em sua fazenda em Laranjeiras do Sul</small>
+      </div>
+      <div class="col-md-8">
+        <h2 class="mb-3">Bruno Fernandes</h2>
+        <p><em>Agricultor familiar de 78 anos, residente em Laranjeiras do Sul, casado com Romélia e pai orgulhoso de 8 filhos.</em></p>
+        <p>
+          Bruno Fernandes é um exemplo de dedicação e amor pela terra. Ao longo de quase oito décadas de vida, ele cultivou não só a terra, mas também uma família unida e uma comunidade forte. Desde jovem, aprendeu com seus pais as práticas da agricultura familiar, valorizando a sustentabilidade, a tradição e o conhecimento passado de geração em geração.
+        </p>
+        <p>
+          Sua fazenda é um espaço de trabalho, mas também de encontros, troca de saberes e fortalecimento das raízes rurais. Apesar dos desafios impostos pelas mudanças climáticas e pelo mercado, Bruno mantém viva a paixão pela vida no campo, sempre buscando inovações que respeitem o meio ambiente e promovam o bem-estar das futuras gerações.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <h3 class="mb-3">Entrevista com Bruno Fernandes</h3>
+
+      <p><strong>ROBSON CRUSOÉ:</strong> Bruno, o que significa para você a vida no campo?</p>
+      <p><em>Bruno Fernandes:</em> "Para mim, a vida no campo é mais do que trabalho. É uma conexão profunda com a terra, com minha família e com a minha história. Aqui, eu vejo o fruto do esforço diário e o respeito pela natureza."</p>
+
+      <p><strong>ROBSON CRUSOÉ:</strong> Como foi crescer e criar uma família nesse ambiente?</p>
+      <p><em>Bruno Fernandes:</em> "Foi um aprendizado constante. Criar oito filhos no campo significa passar valores, ensinar sobre a importância do trabalho duro e da honestidade. Minha esposa Romélia sempre foi meu apoio. Juntos, ensinamos as crianças a amar a vida rural."</p>
+
+      <p><strong>ROBSON CRUSOÉ:</strong> Que desafios você enfrentou na agricultura familiar?</p>
+      <p><em>Bruno Fernandes:</em> "Muitos. Desde as variações do clima até as dificuldades em acessar mercados e tecnologias. Mas acredito que a força da comunidade rural e a vontade de melhorar nos mantém firmes. Sempre busquei aprender e adaptar novas técnicas que respeitam o meio ambiente."</p>
+
+      <p><strong>ROBSON CRUSOÉ:</strong> Qual conselho você daria aos jovens que querem seguir a agricultura?</p>
+      <p><em>Bruno Fernandes:</em> "Que tenham amor pela terra, paciência e respeito. É uma vida de desafios, mas muito recompensadora. Também é fundamental valorizar o conhecimento, tanto o tradicional quanto o moderno, para construir um futuro sustentável."</p>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container my-4">
+  <h1 style="color:brown;">Referência</h1>
+  <p>
+    <a href="https://www.ufsm.br/app/uploads/sites/373/2019/06/Marisa-Hartwig.pdf" target="_blank" style="color:purple;">
+      Migração campo-cidade: trajetórias de vida, trabalho e escolarização de jovens trabalhadores
+    </a>
+  </p>
+</div>
+
+    <footer>
+        Todos os direitos reservados para Agrinho 2025 - Festejando a conexão campo cidade.
+    </footer>
+
+</body>
+</html>
